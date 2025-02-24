@@ -120,7 +120,7 @@ impl Ppocr {
     */
     pub fn new(exe_path: PathBuf, config_path: Option<PathBuf>) -> Result<Ppocr, Box<dyn Error>> {
         std::env::set_var("RUST_BACKTRACE", "full");
-        if !cfg!(target_os = "windows") {
+        if !cfg!(target_os = "windows") && !cfg!(target_os = "linux") {
             return Err(Box::new(OsNotSupportedError {}));
         }
         if !exe_path.exists() {
