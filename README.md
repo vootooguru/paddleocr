@@ -13,6 +13,7 @@ let mut p = paddleocr::Ppocr::new(
 )
 .unwrap(); // initialize
 
+1
 let now = std::time::Instant::now(); // benchmark
 {
     // OCR files
